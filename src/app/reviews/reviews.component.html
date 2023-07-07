@@ -1,0 +1,16 @@
+<table [hidden]="errorMessage">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let review of (reviews$ | async)">
+            <td>{{ review.title }}</td>
+            <td>{{ review.rating }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<p class="error">{{ errorMessage }}</p>

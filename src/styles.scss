@@ -1,0 +1,65 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+fieldset{
+    margin-top: 0.5rem;
+    border-radius: 5px;
+}
+
+form label{
+    margin-right: 1rem;
+}
+
+form div{
+    margin-bottom: 0.5rem;
+}
+
+form div:first-child{
+    margin-top: 0.5rem;
+}
+
+nav{
+    a{
+        color: black;
+        cursor: pointer;   
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .currentPage{
+        color:red;
+    }
+
+    padding: 0.5rem;
+    background-color: antiquewhite;
+    border-radius: 5px;
+}
+
+table{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+thead th{
+    text-align: left;
+    width: 25rem;
+
+}
+
+tbody td{
+    width: 25rem;
+}
+
+thead tr{
+    background-color: gainsboro;
+    position:fixed;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}
+
