@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, tap } from 'rxjs';
-import { LoginResponse } from '../DTOs/login-respons';
+import { LoginResponse } from '../DTOs/login-response';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -25,12 +25,24 @@ export class AuthenticationService {
     sessionStorage.setItem(AuthenticationService.key, value);
   }
 
-  login (username: string, password: string):Observable<Date>{
+  get username(): string{
+    const payload = this.jwt.split('.')[1];
+    const asJson = atob(payload);
+    const asObj = JSON.parse(asJson);
+
+    return asObj['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'];
+  }
+
+  login (username: string, password: string):Observable<string>{
     return this.httpClient.post<LoginResponse>(`${environment.serverUrl}/api/authentication/login`,
       {username, password}
     ).pipe(
       tap(r => this.jwt = r.jwtToken),
       map(r => r.expiration)
     );
+  }
+
+  logout(): void{
+    sessionStorage.removeItem(AuthenticationService.key);
   }
 }

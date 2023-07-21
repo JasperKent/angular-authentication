@@ -10,12 +10,14 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { JwtAuthenticationInterceptor } from './interceptors/jwt-authentication-interceptor';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

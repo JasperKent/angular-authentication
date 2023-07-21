@@ -1,4 +1,4 @@
-<fieldset [disabled]="expiration$">
+<fieldset [disabled]="loggedIn">
     <form  (ngSubmit)="login()">
         <div>
             <label for="username">Username:</label>
@@ -14,6 +14,8 @@
     </form>
 </fieldset>
 
-<p *ngIf="expiration$">
-    You are logged in until {{ expiration$ | async | date : 'longTime'}}
+<p *ngIf="loggedIn">
+    {{ expiration$ | async }}
 </p>
+
+<p class="error">{{ errorMessage }}</p>

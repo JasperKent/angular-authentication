@@ -1,4 +1,4 @@
 export interface LoginResponse{
     jwtToken: string,
-    expiration: Date
+    expiration: string
 }

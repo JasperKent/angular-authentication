@@ -1,0 +1,6 @@
+<span *ngIf="authenticationService.isLoggedIn">
+    Welcome {{ authenticationService.username}}!
+    <a (click)="logout()">Logout</a>
+</span>
+<a *ngIf="!authenticationService.isLoggedIn" routerLinkActive="currentPage" routerLink="login">Login</a>
+
